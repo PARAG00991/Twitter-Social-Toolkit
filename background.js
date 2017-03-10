@@ -13,15 +13,15 @@ function clickHandler(data,tab) {
     //alert(selectedText.selectionText);
     switch (data.menuItemId) {
       case "selection":
-      chrome.windows.create({url: "https://twitter.com/intent/tweet?text="+encodeURIComponent(data.selectionText)});
+      chrome.windows.create({url: "https://twitter.com/intent/tweet?text="+encodeURIComponent(data.selectionText),type: "panel"});
       break;
       case "link":
-      chrome.windows.create({url: "https://twitter.com/intent/tweet?url="+encodeURIComponent(data.linkUrl)});
+      chrome.windows.create({url: "https://twitter.com/intent/tweet?url="+encodeURIComponent(data.linkUrl),type: "panel"});
       break;
       case "image":
-      chrome.windows.create({url: "https://twitter.com/intent/tweet?url="+encodeURIComponent(data.srcUrl)});
+      chrome.windows.create({url: "https://twitter.com/intent/tweet?url="+encodeURIComponent(data.srcUrl),type: "panel"});
       break;
       case "page":
-      chrome.windows.create({url: "https://twitter.com/intent/tweet?text="+encodeURIComponent(tab.title)});
+      chrome.windows.create({url: "https://twitter.com/intent/tweet?text="+encodeURIComponent(tab.title),type: "panel"});
     }
 }
