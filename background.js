@@ -8,7 +8,7 @@ chrome.contextMenus.create({title: titleX,contexts: [context],  //It is used so 
 });
 }
 
-function myFunction(data) {
+function myFunction(data,tab) {
     //alert('You just clicked me folk!');
     //alert(selectedText.selectionText);
     switch (data.menuItemId) {
@@ -22,6 +22,6 @@ function myFunction(data) {
       chrome.tabs.create({url: "https://twitter.com/intent/tweet?url="+data.srcUrl});
       break;
       case "page":
-      chrome.tabs.create({url: "https://twitter.com/intent/tweet?text=MyPage"});
+      chrome.tabs.create({url: "https://twitter.com/intent/tweet?text="+tab.title});
     }
 }
