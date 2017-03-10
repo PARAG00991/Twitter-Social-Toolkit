@@ -4,6 +4,7 @@ chrome.contextMenus.create({
   onclick: myFunction
 });
 
-function myFunction() {
-    alert('You just clicked me folk!');
+function myFunction(selectedText) {
+    //alert('You just clicked me folk!');
+    alert(selectedText.selectionText);
 }
